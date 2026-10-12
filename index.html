@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="color-scheme: light;"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Treino diário de matemática gratuito para estudantes: exercícios com resolução passo a passo, dicas, níveis fácil, médio e difícil, XP e ligas.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#4f6bff">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Treino diário de matemática">
+<meta property="og:description" content="Treino diário de matemática gratuito para estudantes: exercícios com resolução passo a passo, dicas, níveis fácil, médio e difícil, XP e ligas.">
+
+<title>Treino diário de matemática | Exercícios com resolução e dicas</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f6fb;--grid:#dbe7f2;--ink:#14263a;--soft:#55697e;--card:#fff;--line:#c4d6e6;--accent:#d6453d;--ok:#1f9d62;--pen:#1f56b3;--okbg:#e6f6ee;--badbg:#fdeceb;--sheet:#fbfdff;--l1:#1f9d62;--l2:#c47d00;--l3:#d6453d;--l1b:#e2f5eb;--l2b:#fdf1d6;--l3b:#fdeceb;--sh:0 8px 22px -14px rgba(20,38,58,.45);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101922;--grid:#1a2733;--ink:#e8eff6;--soft:#9fb1c3;--card:#17222d;--line:#2d4153;--accent:#ff8077;--ok:#5fd39a;--pen:#8fb8ee;--okbg:#14301f;--badbg:#3a1d1d;--sheet:#1b2835;--l1:#5fd39a;--l2:#f2b84b;--l3:#ff8a80;--l1b:#14301f;--l2b:#3a2f12;--l3b:#3a1d1d;--sh:0 8px 22px -14px rgba(0,0,0,.8)}}
+:root[data-theme="dark"]{--bg:#101922;--grid:#1a2733;--ink:#e8eff6;--soft:#9fb1c3;--card:#17222d;--line:#2d4153;--accent:#ff8077;--ok:#5fd39a;--pen:#8fb8ee;--okbg:#14301f;--badbg:#3a1d1d;--sheet:#1b2835;--l1:#5fd39a;--l2:#f2b84b;--l3:#ff8a80;--l1b:#14301f;--l2b:#3a2f12;--l3b:#3a1d1d;--sh:0 8px 22px -14px rgba(0,0,0,.8)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;color:var(--ink);font:17px/1.5 "Atkinson Hyperlegible",system-ui,sans-serif}
+main{max-width:780px;margin:0 auto;padding:24px 16px 90px}
+header{position:relative;border-left:6px double var(--accent);padding:6px 0 6px 18px;margin:18px 0 22px;overflow:hidden}
+header::after{content:"+ − × ÷";position:absolute;right:0;top:-4px;font:700 3.2rem/1 Caveat,cursive;letter-spacing:.2em;color:var(--pen);opacity:.14;pointer-events:none;white-space:nowrap}
+@media (max-width:560px){header::after{display:none}}
+h1{font:700 clamp(2.4rem,9vw,3.8rem)/1 Caveat,"Comic Sans MS",cursive;margin:0 0 8px;color:var(--pen)}
+h2{font-size:1.3rem;margin:26px 0 8px}
+header p,.hint{margin:0;color:var(--soft);font-size:.95rem}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.tabs button{font:inherit;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;transition:background .15s}
+.tabs button:hover{background:var(--grid)}
+.tabs button.l1{--c:var(--l1);--cb:var(--l1b)}
+.tabs button.l2{--c:var(--l2);--cb:var(--l2b)}
+.tabs button.l3{--c:var(--l3);--cb:var(--l3b)}
+.tabs button[class]::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:8px}
+.tabs button[aria-pressed="true"]{border-color:var(--c,var(--pen));background:var(--cb,var(--card));font-weight:700}
+.tabs.main button{border-radius:10px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px;box-shadow:var(--sh)}
+.q{border-left:6px solid var(--lc,var(--line))}
+.q.l1{--lc:var(--l1)}.q.l2{--lc:var(--l2)}.q.l3{--lc:var(--l3)}
+.q.ok{background:var(--okbg)}
+.q.ok .meta::before{content:"✓ ";color:var(--ok);font-weight:700}
+.meta{color:var(--soft);font-size:.85rem}
+.st{font-size:1.3rem;line-height:1.35;margin:4px 0 12px}
+.prog{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pbar{flex:1;min-width:120px;height:12px;background:var(--grid);border-radius:8px;overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--ok);border-radius:8px;transition:width .4s}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--sheet);border:2px solid var(--line);border-radius:10px;padding:9px 12px;max-width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--pen)}
+.row input{width:12rem;font-size:1.15rem}
+textarea{width:100%;min-height:80px}
+label{display:block;margin:10px 0 3px;font-size:.9rem;color:var(--soft)}
+.btn,.go{font:inherit;font-weight:700;color:#fff;background:var(--pen);border:0;border-radius:10px;padding:10px 18px;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.2);transition:transform .08s,box-shadow .08s}
+.btn:active,.go:active{transform:translateY(3px);box-shadow:none}
+.btn.alt{background:var(--card);color:var(--ink);border:2px solid var(--line);font-weight:400;box-shadow:none;padding:6px 12px}
+.btn.red{background:var(--accent);color:#14263a}
+.btn[disabled]{opacity:.5;cursor:default}
+.msg{margin-top:12px;padding:9px 14px;border-radius:10px;font-weight:700}
+.good{background:var(--card);color:var(--ok);border:1px solid var(--ok)}
+.bad{background:var(--badbg);color:var(--accent);border:1px solid var(--accent)}
+.sol{margin-top:12px;padding:2px 14px 2px 20px;background:var(--sheet) repeating-linear-gradient(transparent 0,transparent 33px,var(--line) 33px,var(--line) 34px);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:8px;font:500 1.45rem/34px Caveat,"Comic Sans MS",cursive;color:var(--pen)}
+.sol div:last-child{font-weight:700;color:var(--ok)}
+@media (prefers-reduced-motion:no-preference){.fresh .msg{animation:pop .35s}.fresh .sol{animation:slide .4s}@keyframes pop{0%{transform:scale(.9);opacity:0}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}@keyframes slide{from{opacity:0;transform:translateY(-6px)}}}
+.wrap{overflow-x:auto;max-width:100%;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--sh)}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:600px}
+th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{background:var(--grid);font-size:.85rem}
+.bar{display:inline-block;width:60px;height:8px;background:var(--grid);border-radius:4px;vertical-align:middle;margin-right:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+.qi{display:flex;gap:10px;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:10px 0}
+.qi div:first-child{min-width:0;overflow-wrap:anywhere}
+.pub{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.hb{display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap}.hb span{flex:0 0 12rem;min-width:0;overflow-wrap:anywhere}.hb small{color:var(--soft)}
+svg.ch{width:100%;height:auto;display:block}.ch .ln{fill:none;stroke:var(--pen);stroke-width:3}.ch .dt{fill:var(--pen)}.ch .gl{stroke:var(--line)}.ch text{fill:var(--soft);font-size:11px}
+details summary{cursor:pointer;font-weight:700}.tabs.tp button{padding:6px 12px;font-size:.92rem}
+.qimg{display:block;max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line);margin:0 0 12px;background:#fff}
+#prev .qimg{margin:8px 0}
+.stk{flex-basis:100%;font-size:.95rem;color:var(--soft)}.stk b{color:var(--accent);font-size:1.2rem}
+.gm{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;flex-basis:100%}.gc{border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:var(--sheet)}.gc small{color:var(--soft)}.gc .pbar{margin:6px 0}
+
+/* visual colorido */
+header{border:0;border-radius:22px;padding:20px 24px;margin:14px 0 20px;background:linear-gradient(135deg,#4f6bff 0%,#8a4fff 55%,#ff5fa2 100%);box-shadow:0 16px 30px -18px rgba(79,70,229,.8)}
+h1{color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.14)}
+header p{color:rgba(255,255,255,.94)}
+header::after{color:#fff;opacity:.3}
+.t0{--c:#2f80ed}.t1{--c:#8e5cf7}.t2{--c:#e07b00}.t3{--c:#e5484d}.t4{--c:#1f9d55}.t5{--c:#d03fd0}.t6{--c:#0b8a89}.t7{--c:#b7791f}
+.tabs button[aria-pressed="true"]{background:color-mix(in srgb,var(--c,var(--pen)) 22%,var(--card))}
+.tabs.tp button[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fff}
+.tabs button{border-color:color-mix(in srgb,var(--c,var(--line)) 45%,var(--line))}
+.box{border-radius:18px}
+.q{background:linear-gradient(180deg,color-mix(in srgb,var(--c,var(--pen)) 9%,var(--card)),var(--card) 65%)}
+.q .meta{display:inline-block;padding:2px 12px;border-radius:99px;font-weight:700;color:var(--c,var(--soft));background:color-mix(in srgb,var(--c,var(--soft)) 15%,transparent)}
+.btn,.go{background:linear-gradient(135deg,#4f6bff,#8a4fff)}
+.pbar i{background:linear-gradient(90deg,#2dd4a3,#22c55e)}
+.gc{border:2px solid var(--lc,var(--line))}
+.gc.lv{--lc:#8a4fff}.gc.lv .pbar i{background:linear-gradient(90deg,#8a4fff,#ff5fa2)}
+.gc.g0{--lc:#cd7f32}.gc.g1{--lc:#9aa5b1}.gc.g2{--lc:#f2b01e}.gc.g3{--lc:#35b8d4}.gc.g4{--lc:#7c6cff}
+.gc[class*=" g"] .pbar i{background:var(--lc)}
+.gc b{font-size:1.1rem}
+
+/* fundo e novos elementos */
+body{background-color:var(--bg);background-image:radial-gradient(1100px 560px at 6% -8%,color-mix(in srgb,#8a4fff 24%,transparent),transparent 62%),radial-gradient(900px 520px at 100% 0%,color-mix(in srgb,#ff5fa2 20%,transparent),transparent 58%),radial-gradient(1000px 600px at 50% 112%,color-mix(in srgb,#2dd4a3 18%,transparent),transparent 62%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190'%3E%3Cg fill='%238a8fd6' fill-opacity='.17' font-family='Georgia,serif' font-size='30'%3E%3Ctext x='14' y='42' transform='rotate(-10 14 42)'%3E%2B%3C/text%3E%3Ctext x='112' y='36'%3E%C3%97%3C/text%3E%3Ctext x='62' y='104' transform='rotate(8 62 104)'%3E%CF%80%3C/text%3E%3Ctext x='146' y='116'%3E%E2%88%9A%3C/text%3E%3Ctext x='20' y='164'%3E%C3%B7%3C/text%3E%3Ctext x='104' y='170' transform='rotate(-8 104 170)'%3E%3D%3C/text%3E%3C/g%3E%3C/svg%3E");background-size:auto,auto,auto,190px 190px}
+.tabs.sj button{border-radius:10px;font-weight:700}
+.dica{background:var(--l2b);color:var(--ink);border:1px dashed var(--l2);font-weight:400}
+.q textarea{width:100%;min-height:90px}.box.dirty{border-color:var(--l2);background:var(--l2b)}
+.sobre{margin-top:30px;color:var(--soft);font-size:.95rem}.sobre h2{font-size:1.1rem}
+</style>
+</head>
+<body>
+<main>
+<header><h1>Treino diário de matemática</h1><p>Escolha o tópico e o nível, resolva no caderno e digite o resultado. A resolução aparece se você errar.</p></header>
+<div id="root"></div>
+<section class="sobre"><h2>Sobre este treino</h2><p>Site gratuito de exercícios de matemática para estudantes, com resolução passo a passo e dicas. Temas: Operações básicas, Álgebra, Potenciação e radiciação, Produtos notáveis, Proporção e frações, Probabilidade, Trigonometria e geometria, Funções.</p></section>
+</main>
+<script type="application/json" id="bank">{"v": 7, "qs": [{"id": "q1791816123709", "tp": "Operações básicas", "lv": 1, "s": "Resolva a expressão10+5x2-8÷4", "a": "18", "u": "", "st": ["1. Primeiro, resolva as multiplicações e divisões na ordem em que aparecem:", "• 5 × 2 = 10", "• 8 ÷ 4 = 2", "• A expressão vira: 10 + 10 - 2", "2. Agora, resolva as adições e subtrações da esquerda para a direita:", "• 10 + 10 = 20", "• 20 - 2 ={18}"], "h": "PENSE!!"}, {"id": "q1791816470480", "tp": "Operações básicas", "lv": 1, "s": "Resolva operação 12+[35-(10+2)+2]", "a": "37", "u": "", "st": ["1. Resolva primeiro o que está dentro dos parênteses:", "• 10 + 2 = 12", "• A expressão vira: (12 + [35 - 12 + 2])", "2. Resolva o que está dentro dos colchetes, seguindo a ordem de leitura:", "• 35 - 12 = 23", "• 23 + 2 = 25", "• A expressão vira: 12 + 25", "3. Some os valores finais:", "• 12 + 25 = 37"], "h": "Pensa caramba!"}, {"id": "q1791816621290", "tp": "Operações básicas", "lv": 2, "s": "Carlos tinha R$ 500,00. Ele pagou uma conta de R$ 140,00 e, com o que sobrou, comprou 3 camisetas de R$ 60,00 cada. Quanto sobrou para Carlos? (Coloque o valor sem a cifra, com virgula e duas casas decimais)", "a": "180,00", "u": "", "st": ["Expressão: 500 - 140 - (3 x 60)", "1. Multiplicação primeiro (gasto com as camisetas):", "3 x 60 = 180", "A expressão fica: 500 - 140 - 180", "2. Subtração da esquerda para a direita (pagando a conta):", "500 - 140 = 360", "3. Subtração final (tirando o valor das camisetas):", "360 - 180 = 180"]}, {"id": "q1791816883464", "tp": "Operações básicas", "lv": 3, "s": "Uma confeitaria produziu 120 doces. O dono separou 12 doces para degustação e embalou o restante em caixas com 6 doces cada. Ele vendeu cada caixa por R$ 30,00 e teve um custo fixo de R$ 150,00 com os ingredientes. Qual foi o lucro líquido total da confeitaria? (coloque o valor sem cifra e com virgula e dois zeros)", "a": "390,00", "u": "", "st": ["Expressão: [(120 - 12) / 6 x 30] - 150", "1. Parênteses primeiro (doces que restaram para vender):", "120 - 12 = 108", "A expressão fica: [108 / 6 x 30] - 150", "2. Divisão dentro dos colchetes (quantidade de caixas feitas):", "108 / 6 = 18 caixas", "A expressão fica: [18 x 30] - 150", "3. Multiplicação dentro dos colchetes (faturamento total das vendas):", "18 x 30 = 540", "A expressão fica: 540 - 150", "4. Subtração final (retirando o custo dos ingredientes para achar o lucro):", "540 - 150 = 390"]}, {"id": "q1791816993844", "tp": "Operações básicas", "lv": 3, "s": "100 - { 4 x [ ( 30 - 6 ) / 3 + 2³ ] } / 2", "a": "68", "u": "", "st": ["1. Parênteses e potência primeiro (dentro do colchete):", "• Subtração no parêntese: 30 - 6 = 24", "• Potência: 2³ = 2 x 2 x 2 = 8", "• A expressão fica: 100 - { 4 x [ 24 / 3 + 8 ] } / 2", "2. Divisão dentro do colchete:", "• 24 / 3 = 8", "• A expressão fica: 100 - { 4 x [ 8 + 8 ] } / 2", "3. Soma para eliminar o colchete:", "• 8 + 8 = 16", "• A expressão fica: 100 - { 4 x 16 } / 2", "4. Multiplicação para eliminar a chave:", "• 4 x 16 = 64", "• A expressão fica: 100 - 64 / 2", "5. Divisão antes da subtração:", "• 64 / 2 = 32", "• A expressão fica: 100 - 32", "6. Subtração final:", "• 100 - 32 = 68"]}], "subj": [{"n": "Matemática", "t": ["Operações básicas", "Álgebra", "Potenciação e radiciação", "Produtos notáveis", "Proporção e frações", "Probabilidade", "Trigonometria e geometria", "Funções"]}]}</script>
+<script>
+var $=function(s,r){return(r||document).querySelector(s)};
+var E=function(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+function load(k,d){try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var bank=JSON.parse($("#bank").textContent),LV=["","Fácil","Médio","Difícil"];
+var TP=[],SI=0;function allT(){var a=[];bank.subj.forEach(function(s){a=a.concat(s.t)});return a}function STP(){var t=(bank.subj[SI]||bank.subj[0]).t,u=t.filter(function(x){return bank.qs.some(function(q){return q.tp==x})});return u.length?u:t}TP=allT();
+var ST=load("s1-st",{n:"",p:{}});ST.h=ST.h||[];var RP=load("s1-rp2",{});
+function hid(n){var h=5381;n=String(n).trim().toLowerCase();for(var i=0;i<n.length;i++)h=((h<<5)+h+n.charCodeAt(i))|0;return"s"+(h>>>0).toString(36)}
+var DB=null;(function(){var t={};Object.keys(RP).forEach(function(k){t[hid(RP[k].n)]=RP[k]});RP=t})();
+function toDoc(o){var d={n:o.n,d:o.d||0,e:Object.keys(o.e).map(function(key){var v=o.e[key],a=key.split(":");return v[0]+":"+a[0]+":"+v[1]+":"+a[1]})};if(o.s)d.s=o.s;if(o.x)d.x=o.x;return d}
+function fromDoc(v){var o={n:v.n,d:v.d,s:v.s,x:v.x,e:{}};(v.e||[]).forEach(function(x){var a=x.split(":");o.e[a[1]+":"+a[3]]=[+a[0],+a[2]]});return o}
+function persist(ks){if(!DB){save("s1-rp2",RP);return}var i=0;(function nx(){if(i>=ks.length)return;var k=ks[i++];DB.doc("reports/"+k).set(toDoc(RP[k])).then(nx).catch(function(e){note="Não salvou na conta ("+(e&&e.code||"erro")+")";draw()})})()}
+function del(k){delete RP[k];if(DB)DB.doc("reports/"+k).delete().catch(function(){});else save("s1-rp2",RP)}
+async function migrate(){if(load("s1-mig",0))return;var L=load("s1-rp2",{}),ks=Object.keys(L);for(var i=0;i<ks.length;i++){var o=L[ks[i]],id=hid(o.n),sn=await DB.doc("reports/"+id).get();if(!sn.exists)await DB.doc("reports/"+id).set(toDoc(o))}save("s1-mig",1)}
+var LG=[["Bronze","🥉",0],["Prata","🥈",15],["Ouro","🥇",35],["Platina","💠",60],["Diamante","💎",85]],BX=[0,10,15,20];
+function lvl(x){return Math.floor(Math.sqrt(x/30))+1}
+function lga(l){var i=0;LG.forEach(function(g,k){if(l>=g[2])i=k});return i}
+if(ST.xp===undefined){ST.xp=0;ST.lp=0;bank.qs.forEach(function(q){var p=ST.p[q.id];if(!p)return;if(p[1]){ST.xp+=BX[q.lv]+(p[0]==1?5:0);ST.lp+=p[0]==1?2:1}if(p[0]>p[1])ST.xp+=2});save("s1-st",ST)}
+var ti=0,lv=1,tab="ex",sub="al",bt=0,isT=false,ART=null,dirty=false,edit=null,note="",code="",rst=false,wk="all",who="*";
+var pend=null;
+function stash(){try{localStorage.setItem("s1-draft",JSON.stringify({b:bank.v||1,bank:bank}))}catch(e){}}
+function mk(){dirty=true;stash()}
+function pendHtml(){return'<div class="box dirty"><b>Alterações não publicadas encontradas neste navegador.</b><p class="hint">Foram feitas antes de a página recarregar.</p><div class="row"><button class="btn" id="prs">Restaurar</button><button class="btn alt" id="pdc">Descartar</button></div></div>'}
+async function exportCsv(){try{var L=[["Aluno","Tentativas","Acertos","Acerto %","Questões diferentes","Dias ativos","Recorde de acertos seguidos","Dias seguidos","Nível","Liga","Último envio"]];Object.keys(RP).sort().forEach(function(k){var r=rows(k),a=r.filter(function(x){return x.ok}).length,o=RP[k];L.push([o.n,r.length,a,pct(a,r.length),new Set(r.map(function(x){return x.q.id})).size,new Set(r.map(function(x){return x.d})).size,o.s?o.s[1]:"",o.s?o.s[2]:"",o.x?lvl(o.x[0]):"",o.x?LG[lga(o.x[1])][0]:"",new Date(o.d||0).toLocaleDateString("pt-BR")])});var csv="\ufeff"+L.map(function(l){return l.map(function(c){return'"'+String(c).replace(/"/g,'""')+'"'}).join(";")}).join("\n");var bl=new Blob([csv],{type:"text/csv;charset=utf-8"}),an=document.createElement("a");an.href=URL.createObjectURL(bl);an.download="resultados-alunos.csv";document.body.appendChild(an);an.click();an.remove()}catch(e){if(!e||e.code!="declined"){note="Não consegui exportar.";draw()}}}
+function day(){return Math.floor((Date.now()-new Date().getTimezoneOffset()*6e4)/864e5)}
+function fd(d){return new Date(d*864e5).toLocaleDateString("pt-BR",{timeZone:"UTC",day:"2-digit",month:"2-digit"})}
+function pct(a,b){return b?Math.round(a/b*100):0}
+function num(s){s=String(s).toLowerCase().replace(/r\$|%|\s/g,"").replace(/−/g,"-");if(s.indexOf(",")>-1)s=s.replace(/\./g,"").replace(",",".");else if(/^-?\d{1,3}(\.\d{3})+$/.test(s))s=s.replace(/\./g,"");return/^-?\d*\.?\d+$/.test(s)?parseFloat(s):NaN}
+function right(q,v){var a=num(q.a),b=num(v);return isNaN(a)?String(v).trim().toLowerCase()==String(q.a).trim().toLowerCase():(!isNaN(b)&&Math.abs(a-b)<1e-9)}
+function P(id){return ST.p[id]||[0,0]}
+function inTp(){return bank.qs.filter(function(q){return q.tp==(STP()[ti]||STP()[0])})}
+function cnt(l){var a=inTp().filter(function(q){return q.lv==l});return[a.filter(function(q){return P(q.id)[1]}).length,a.length]}
+function nz(s){return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim()}
+function gradeTxt(q,v){var T=nz(v).split(" "),f=[],m=[],K=q.k||[];K.forEach(function(line){var vs=line.split("|"),hit=vs.some(function(x){var W=nz(x).split(" ").filter(function(w){return w.length>2});return W.length&&W.every(function(w){var st=w.length>5?w.slice(0,w.length-2):w;return T.some(function(t){return t.indexOf(st)==0})})});(hit?f:m).push(vs[0].trim())});var mn=q.mn||K.length;return{ok:f.length>=mn,f:f,m:m,mn:mn,n:K.length}}
+function fbt(g,ok){return'<p class="hint">Ideias-chave encontradas: <b>'+g.f.length+' de '+g.n+'</b>'+(g.f.length?' ('+g.f.map(E).join(", ")+')':'')+(ok?'':'. Mínimo para acertar: '+g.mn+'.')+(!ok&&g.m.length?' Faltou mencionar: '+g.m.map(E).join(", ")+'.':'')+'</p>'}
+function card(q){var p=P(q.id),w=p[0]-p[1],h='<div class="box q l'+q.lv+' t'+(TP.indexOf(q.tp)%8)+(p[1]?' ok':'')+'" data-id="'+q.id+'"><div class="meta">'+E(q.tp)+' · '+LV[q.lv]+'</div><div class="st">'+E(q.s)+'</div>'+(q.img?'<img class="qimg" src="'+q.img+'" alt="Figura da questão">':'');
+ if(p[1])h+='<div class="msg good">'+(p[0]==1?'Acertou de primeira!':'Acertou! Foram '+p[0]+' tentativas.')+'</div>';
+ else{h+='<div class="row">'+(q.ty=="txt"?'<textarea aria-label="Sua resposta" placeholder="Escreva com as suas palavras"></textarea>':(q.u?'<b>'+E(q.u)+'</b>':'')+'<input inputmode="decimal" autocomplete="off" aria-label="Sua resposta" placeholder="Sua resposta">')+'<button class="go">Responder</button></div>'+(q.h?'<button class="btn alt dk" style="margin-top:8px">💡 Ver dica</button><div class="msg dica" hidden>'+E(q.h)+'</div>':'');if(w)h+='<div class="msg bad">Não foi dessa vez. Veja a resolução e tente de novo.</div>'}
+ if(w)h+='<div class="sol">'+(q.ty=="txt"?["Resposta modelo: "+q.a].concat(q.st):q.st).map(function(x){return'<div>'+E(x)+'</div>'}).join('')+'</div>';
+ return h+'</div>'}
+function lvTabs(){return[1,2,3].map(function(l){var c=cnt(l);return'<button class="l'+l+'" data-lv="'+l+'" aria-pressed="'+(lv==l)+'">'+LV[l]+' ('+c[0]+'/'+c[1]+')</button>'}).join('')}
+function tpTabs(){return STP().map(function(t,i){var a=bank.qs.filter(function(q){return q.tp==t});return'<button class="t'+(TP.indexOf(t)%8)+'" data-ti="'+i+'" aria-pressed="'+(ti==i)+'">'+t+' ('+a.filter(function(q){return P(q.id)[1]}).length+'/'+a.length+')</button>'}).join('')}
+function gm(){var x=ST.xp||0,lp=ST.lp||0,L=lvl(x),b=30*(L-1)*(L-1),n=30*L*L,i=lga(lp),g=LG[i],nx=LG[i+1];
+return'<div class="gm"><div class="gc lv"><b>Nível '+L+'</b> <small>'+x+' XP</small><div class="pbar"><i style="width:'+pct(x-b,n-b)+'%"></i></div><small>faltam '+(n-x)+' XP para o nível '+(L+1)+'</small></div><div class="gc g'+i+'"><b>'+g[1]+' Liga '+g[0]+'</b> <small>'+lp+' pontos</small><div class="pbar"><i style="width:'+(nx?pct(lp-g[2],nx[2]-g[2]):100)+'%"></i></div><small>'+(nx?'faltam '+(nx[2]-lp)+' pontos para a Liga '+nx[0]:'Liga máxima!')+'</small></div></div>'}
+function progIn(){var sk=strk(ST.h),d=bank.qs.filter(function(q){return P(q.id)[1]}).length,t=bank.qs.length;return'<div><b>'+d+' de '+t+'</b> questões resolvidas</div><div class="pbar"><i style="width:'+pct(d,t)+'%"></i></div>'+gm()+'<div class="stk">🔥 <b>'+sk[0]+'</b> acertos seguidos · recorde '+sk[1]+' · '+sk[2]+' dia(s) seguido(s)</div>'}
+function recent(n){var d=day();return ST.h.filter(function(x){return+x.split(":")[0]>d-n})}
+function week(){return recent(7)}
+function strk(h){var r=0,b=0,ds={};h.forEach(function(x){var a=x.split(":");ds[a[0]]=1;if(a[2]=="1"){r++;if(r>b)b=r}else r=0});var d=day(),n=0;if(!ds[d])d--;while(ds[d]){n++;d--}return[r,b,n]}
+function summ(){var w=week(),o=w.filter(function(x){return x.split(":")[2]=="1"}).length;return w.length?w.length+' tentativas nos últimos 7 dias, com '+pct(o,w.length)+'% de acertos.':'Nenhuma tentativa nos últimos 7 dias.'}
+function student(){return'<div class="box"><label for="nm" style="margin-top:0">Seu nome</label><input id="nm" value="'+E(ST.n)+'" placeholder="Nome e sobrenome"></div>'
+ +'<div class="box prog" id="pg">'+progIn()+'</div>'+(bank.subj.length>1?'<div class="tabs sj">'+bank.subj.map(function(s,i){return'<button data-si="'+i+'" aria-pressed="'+(SI==i)+'">'+E(s.n)+'</button>'}).join('')+'</div>':'')+'<div class="tabs tp" id="tpt">'+tpTabs()+'</div><div class="tabs" id="lvt">'+lvTabs()+'</div>'
+ +'<div id="qs">'+inTp().filter(function(q){return q.lv==lv}).map(card).join('')+'</div>'
+ +'<div class="box"><b>Relatório semanal</b><p class="hint" id="sm">'+summ()+'</p><p class="hint">Gere o código uma vez por semana e envie ao guia. Ele leva suas últimas 2 semanas, então nada se perde se você atrasar.</p><div class="row" style="margin-top:8px"><button class="btn" id="gen">Gerar código</button><button class="btn alt" id="rs">'+(rst?'Tem certeza? Clique de novo':'Zerar meu progresso')+'</button></div>'
+ +(code?'<textarea id="code" readonly>'+E(code)+'</textarea><button class="btn alt" id="cp" style="margin-top:6px">Copiar</button>':'')+'</div><p class="hint" style="text-align:center">Versão do conteúdo: '+(bank.v||1)+'</p>'+(isT?'':'<details class="box"'+(note?' open':'')+'><summary>Área do guia</summary><label>Repositório (usuario/nome)</label><input id="grp" value="'+E(repoInfo())+'"><label>Token do GitHub</label><input id="gt" type="password" autocomplete="off"><div class="row" style="margin-top:8px"><button class="btn" id="gl">Entrar</button><span class="hint">'+E(note)+'</span></div></details>')}
+function rows(sel){var Q={},o=[];bank.qs.forEach(function(q){Q[q.id]=q});Object.keys(RP).forEach(function(k){if(sel!="*"&&sel!=k)return;var e=RP[k].e;Object.keys(e).forEach(function(x){var q=Q[x.split(":")[0]],v=e[x];if(!q)return;if(wk!="all"&&Math.floor((v[0]+3)/7)!=wk)return;o.push({q:q,d:v[0],ok:v[1]})})});return o}
+function chart(R){var D={};R.forEach(function(x){(D[x.d]=D[x.d]||[0,0])[0]+=x.ok;D[x.d][1]++});var ds=Object.keys(D).map(Number).sort(function(a,b){return a-b});if(!ds.length)return'';
+ var W=600,X=function(i){return ds.length<2?W/2:40+i*(W-60)/(ds.length-1)},Y=function(p){return 140-p*1.2},py=function(d){return Y(pct(D[d][0],D[d][1]))},st=Math.ceil(ds.length/10);
+ return'<svg class="ch" viewBox="0 0 '+W+' 170" role="img" aria-label="Desempenho por dia">'+[0,50,100].map(function(p){return'<line class="gl" x1="30" x2="'+W+'" y1="'+Y(p)+'" y2="'+Y(p)+'"/><text x="0" y="'+(Y(p)+4)+'">'+p+'%</text>'}).join('')
+ +'<polyline class="ln" points="'+ds.map(function(d,i){return X(i)+","+py(d)}).join(" ")+'"/>'+ds.map(function(d,i){return'<circle class="dt" cx="'+X(i)+'" cy="'+py(d)+'" r="4"/>'+(i%st?'':'<text text-anchor="middle" x="'+X(i)+'" y="164">'+fd(d)+'</text>')}).join('')+'</svg>'}
+function alunos(){var ks=Object.keys(RP).sort();
+ var h='<div class="box"><b>Importar relatórios</b><p class="hint">Cole os códigos dos alunos, um por linha. Relatórios novos somam aos anteriores sem duplicar. '+(DB?'Salvos na conta: aparecem em qualquer aparelho e para os editores.':'Salvos só neste navegador.')+'</p><textarea id="imp" placeholder="Cole aqui"></textarea><div class="row" style="margin-top:6px"><button class="btn" id="add">Adicionar</button><span class="hint">'+E(note)+'</span></div></div>';
+ if(!ks.length)return h+'<p class="hint">Nenhum aluno importado ainda.</p>';
+ var ws={};ks.forEach(function(k){Object.keys(RP[k].e).forEach(function(x){ws[Math.floor((RP[k].e[x][0]+3)/7)]=1})});
+ h+='<div class="row"><select id="wk" aria-label="Semana"><option value="all">Todas as semanas</option>'+Object.keys(ws).sort(function(a,b){return b-a}).map(function(w){return'<option value="'+w+'"'+(wk==w?' selected':'')+'>Semana de '+fd(7*w-3)+'</option>'}).join('')+'</select><select id="who" aria-label="Aluno"><option value="*">Turma toda</option>'+ks.map(function(k){return'<option value="'+E(k)+'"'+(who==k?' selected':'')+'>'+E(RP[k].n)+'</option>'}).join('')+'</select></div>';
+ h+='<h2>Alunos <button class="btn alt" id="csv">Exportar CSV</button></h2><div class="wrap"><table><tr><th>Aluno</th><th>Tentativas</th><th>Acertos</th><th>Questões diferentes</th><th>Dias ativos</th><th>Sequência</th><th>Nível e liga</th><th>Último envio</th><th></th></tr>'+ks.map(function(k){var r=rows(k),a=r.filter(function(x){return x.ok}).length;return'<tr><td><b>'+E(RP[k].n)+'</b></td><td>'+r.length+'</td><td><span class="bar"><i style="width:'+pct(a,r.length)+'%"></i></span>'+pct(a,r.length)+'%</td><td>'+new Set(r.map(function(x){return x.q.id})).size+'</td><td>'+new Set(r.map(function(x){return x.d})).size+'</td><td>'+(RP[k].s?'recorde '+RP[k].s[1]+' · '+RP[k].s[2]+' dia(s)':'–')+'</td><td>'+(RP[k].x?'Nível '+lvl(RP[k].x[0])+' · '+LG[lga(RP[k].x[1])][1]+' '+LG[lga(RP[k].x[1])][0]:'–')+'</td><td>'+new Date(RP[k].d).toLocaleDateString("pt-BR")+'</td><td><button class="btn alt" data-del="'+E(k)+'">Remover</button></td></tr>'}).join('')+'</table></div>';
+ var R=rows(who);if(!R.length)return h+'<p class="hint">Sem tentativas neste filtro.</p>';
+ var T=TP.map(function(t){var a=R.filter(function(x){return x.q.tp==t});return{t:t,n:a.length,p:pct(a.filter(function(x){return x.ok}).length,a.length)}}).filter(function(x){return x.n}).sort(function(a,b){return a.p-b.p});
+ h+='<h2>Maiores dificuldades</h2><p class="hint">Do menor para o maior percentual de acerto. '+[1,2,3].map(function(l){var a=R.filter(function(x){return x.q.lv==l});return LV[l]+': '+(a.length?pct(a.filter(function(x){return x.ok}).length,a.length)+'%':'–')}).join(' · ')+'</p><div class="box">'+T.map(function(x){return'<div class="hb"><span>'+E(x.t)+'</span><div class="pbar"><i style="width:'+x.p+'%"></i></div><b>'+x.p+'%</b><small>'+x.n+' tent.</small></div>'}).join('')+'</div>';
+ var M={};R.forEach(function(x){var m=M[x.q.id]=M[x.q.id]||{q:x.q,e:0,n:0};m.n++;if(!x.ok)m.e++});
+ var top=Object.keys(M).map(function(k){return M[k]}).filter(function(m){return m.e}).sort(function(a,b){return b.e-a.e}).slice(0,5);
+ h+='<h2>Questões mais erradas</h2><div class="box">'+(top.length?top.map(function(m){return'<div class="qi"><div><span class="meta">'+E(m.q.tp)+' · '+LV[m.q.lv]+'</span><br>'+E(m.q.s)+'</div><b>'+m.e+' erro(s) em '+m.n+'</b></div>'}).join(''):'<p class="hint">Nenhum erro registrado.</p>')+'</div>';
+ return h+'<h2>Desempenho por dia</h2><div class="box">'+chart(R)+'</div>'}
+function prevHtml(){return edit.img?'<img class="qimg" src="'+edit.img+'" alt="Pré-visualização"><button class="btn alt" id="ri">Remover foto</button>':''}
+function shrink(f,cb){var r=new FileReader();r.onload=function(){var i=new Image();i.onload=function(){var k=Math.min(1,800/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=Math.round(i.width*k);c.height=Math.round(i.height*k);var x=c.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);x.drawImage(i,0,0,c.width,c.height);cb(c.toDataURL("image/jpeg",.82))};i.onerror=function(){cb("")};i.src=r.result};r.readAsDataURL(f)}
+function sjOf(tp){for(var i=0;i<bank.subj.length;i++)if(bank.subj[i].t.indexOf(tp)>-1)return i;return 0}
+function sj0(q){return q.sj!=null?q.sj:sjOf(q.tp)}
+function numF(q){return'<label>Resposta (número, ex.: 16,25)</label><input id="f-a" value="'+E(q.a)+'"><label>Unidade antes da resposta (opcional)</label><input id="f-u" value="'+E(q.u)+'">'}
+function txtF(q){return'<label>Resposta modelo (aparece depois que o aluno errar)</label><textarea id="f-a">'+E(q.a)+'</textarea><label>Ideias-chave: uma por linha, com sinônimos separados por |</label><textarea id="f-k" style="min-height:90px">'+E((q.k||[]).join("\n"))+'</textarea><label>Mínimo de ideias para acertar</label><input id="f-mn" type="number" min="1" value="'+(q.mn||"")+'">'}
+function grab(){var g=function(i){var e=$("#"+i);return e?e.value:null},v;if((v=g("f-sj"))!=null)edit.sj=+v;if((v=g("f-tp"))!=null)edit.tp=v;if((v=g("f-lv"))!=null)edit.lv=+v;if((v=g("f-s"))!=null)edit.s=v;if((v=g("f-a"))!=null)edit.a=v;if((v=g("f-u"))!=null)edit.u=v;if((v=g("f-h"))!=null)edit.h=v;if((v=g("f-st"))!=null)edit.st=v.split("\n").filter(Boolean);if((v=g("f-k"))!=null)edit.k=v.split("\n").filter(Boolean);if((v=g("f-mn"))!=null)edit.mn=+v||0}
+function form(){var q=edit;return'<div class="box"><b>'+(q.nw?'Nova questão':'Editar questão')+'</b><label>Matéria</label><select id="f-sj">'+bank.subj.map(function(m,i){return'<option value="'+i+'"'+(i==sj0(q)?' selected':'')+'>'+E(m.n)+'</option>'}).join('')+'</select><label>Tema</label><select id="f-tp">'+(bank.subj[sj0(q)].t.map(function(t){return'<option'+(q.tp==t?' selected':'')+'>'+E(t)+'</option>'}).join('')||'<option value="">(crie um tema nessa matéria)</option>')+'</select><label>Nível</label><select id="f-lv">'+[1,2,3].map(function(l){return'<option value="'+l+'"'+(q.lv==l?' selected':'')+'>'+LV[l]+'</option>'}).join('')+'</select>'
+ +'<label>Tipo de resposta</label><select id="f-ty"><option value="num"'+(q.ty=="txt"?'':' selected')+'>Numérica</option><option value="txt"'+(q.ty=="txt"?' selected':'')+'>Dissertativa (texto)</option></select><label>Enunciado</label><textarea id="f-s">'+E(q.s)+'</textarea><label>Foto (opcional, ex.: figura de um triângulo)</label><input type="file" id="f-img" accept="image/*"><div id="prev">'+prevHtml()+'</div>'+(q.ty=="txt"?txtF(q):numF(q))+''
+ +'<label>Dica (opcional)</label><textarea id="f-h" style="min-height:60px">'+E(q.h||"")+'</textarea><label>Resolução (um passo por linha)</label><textarea id="f-st" style="min-height:120px">'+E(q.st.join("\n"))+'</textarea><div class="row" style="margin-top:10px"><button class="btn" id="sv">Salvar questão</button><button class="btn alt" id="cn">Cancelar</button></div></div>'}
+function banco(){var h='';
+ h+=edit?form():'<div class="row"><select id="bt" aria-label="Tema">'+bank.subj.map(function(m){return'<optgroup label="'+E(m.n)+'">'+m.t.map(function(t){var i=TP.indexOf(t);return'<option value="'+i+'"'+(bt==i?' selected':'')+'>'+E(t)+'</option>'}).join('')+'</optgroup>'}).join('')+'</select><button class="btn" id="new">+ Nova questão</button></div>';
+ [1,2,3].forEach(function(l){h+='<h2>'+LV[l]+'</h2>';bank.qs.filter(function(q){return q.tp==TP[bt]&&q.lv==l}).forEach(function(q){h+='<div class="qi"><div><span class="meta">resposta '+E(q.a)+(q.img?' · com foto':'')+(q.h?' · com dica':'')+(q.ty=='txt'?' · dissertativa':'')+'</span><br>'+E(q.s)+'</div><div class="row"><button class="btn alt" data-ed="'+q.id+'">Editar</button><button class="btn alt" data-rm="'+q.id+'">Excluir</button></div></div>'})});return h}
+function temas(){var h='<div class="box"><b>Nova matéria</b><div class="row" style="margin-top:6px"><input id="nsj" placeholder="Ex.: Física"><button class="btn" id="addsj">Adicionar matéria</button></div></div>'
+ +'<div class="box"><b>Novo tema</b><div class="row" style="margin-top:6px"><select id="tsj" aria-label="Matéria">'+bank.subj.map(function(s,i){return'<option value="'+i+'">'+E(s.n)+'</option>'}).join('')+'</select><input id="ntp" placeholder="Ex.: Equações do 2º grau"><button class="btn" id="addtp">Adicionar tema</button></div></div>';
+ bank.subj.forEach(function(s,i){h+='<h2>'+E(s.n)+' <button class="btn alt" data-rmsj="'+i+'">Excluir matéria</button></h2>'+(s.t.map(function(t,j){return'<div class="qi"><div>'+E(t)+' <span class="meta">'+bank.qs.filter(function(q){return q.tp==t}).length+' questões</span></div><button class="btn alt" data-rmtp="'+i+':'+j+'">Excluir tema</button></div>'}).join('')||'<p class="hint">Sem temas ainda.</p>')});return h}
+function prof(){return(pend?pendHtml():'')+'<div class="box pub'+(dirty?' dirty':'')+'"><button class="btn red" id="pub"'+(dirty&&ART?'':' disabled')+'>Publicar alterações</button><span class="hint" id="pn">'+(ART?(dirty?'⚠ Há alterações não publicadas: os alunos ainda não veem.':'Nada pendente (versão '+(bank.v||1)+').'):'Publicar só funciona para o dono logado.')+' '+E(note)+'</span></div>'
+ +'<div class="tabs"><button data-sub="al" aria-pressed="'+(sub=="al")+'">Relatórios</button><button data-sub="bk" aria-pressed="'+(sub=="bk")+'">Questões</button><button data-sub="th" aria-pressed="'+(sub=="th")+'">Matérias e temas</button></div>'+(sub=="al"?alunos():sub=="bk"?banco():temas())}
+function draw(){var h=isT?'<div class="tabs main"><button data-tab="ex" aria-pressed="'+(tab=="ex")+'">Exercícios</button><button data-tab="pr" aria-pressed="'+(tab=="pr")+'">Painel do guia</button></div>':'';
+ $("#root").innerHTML=h+(tab=="pr"&&isT?prof():student())}
+function buildDoc(){var c=document.documentElement.cloneNode(true);c.removeAttribute("data-theme");c.querySelector("#root").innerHTML="";c.querySelector("#bank").textContent=JSON.stringify(bank).replace(/</g,"\\u003c");return"<!DOCTYPE html>\n"+c.outerHTML}
+document.addEventListener("click",function(e){var t=e.target,d=t.dataset||{};
+ if(d.lv){lv=+d.lv;draw()}else if(d.ti){ti=+d.ti;draw()}else if(d.si){SI=+d.si;ti=0;draw()}else if(d.tab){tab=d.tab;note="";draw()}else if(d.sub){sub=d.sub;note="";draw()}
+ else if(t.classList.contains("dk")){var dv=t.nextElementSibling;dv.hidden=!dv.hidden}
+ else if(t.classList.contains("go")){var c=t.closest(".q"),q=bank.qs.filter(function(x){return x.id==c.dataset.id})[0],v=$("input,textarea",c).value;if(!v.trim())return;
+  var p=P(q.id).slice(),gr=q.ty=="txt"?gradeTxt(q,v):null,ok=gr?gr.ok:right(q,v);p[0]++;if(ok)p[1]=1;ST.p[q.id]=p;var gx=ok?BX[q.lv]+(p[0]==1?5:0):(p[0]-p[1]==1?2:0),l0=lvl(ST.xp),g0=lga(ST.lp);ST.xp+=gx;if(ok)ST.lp+=p[0]==1?2:1;ST.h.push(day()+":"+q.id+":"+(ok?1:0)+":"+p[0]);save("s1-st",ST);
+  c.outerHTML=card(q);var nc=$('[data-id="'+q.id+'"]');if(nc)nc.classList.add("fresh");$("#lvt").innerHTML=lvTabs();$("#tpt").innerHTML=tpTabs();$("#pg").innerHTML=progIn();$("#sm").textContent=summ();var sk=strk(ST.h)[0];if(ok&&[3,5,10,15,20,30].indexOf(sk)>-1&&nc)nc.insertAdjacentHTML("beforeend",'<div class="msg good">🔥 Sequência de '+sk+' acertos!</div>');
+  var ex=gx?(ok?'<div class="msg good">+'+gx+' XP</div>':'<p class="hint">+'+gx+' XP por tentar</p>'):'';if(lvl(ST.xp)>l0)ex+='<div class="msg good">⬆️ Você chegou ao Nível '+lvl(ST.xp)+'!</div>';if(lga(ST.lp)>g0)ex+='<div class="msg good">'+LG[lga(ST.lp)][1]+' Subiu para a Liga '+LG[lga(ST.lp)][0]+'!</div>';if(gr)ex=fbt(gr,ok)+ex;if(ex&&nc)nc.insertAdjacentHTML("beforeend",ex)}
+ else if(t.id=="gen"){code=btoa(unescape(encodeURIComponent(JSON.stringify({n:ST.n||"Sem nome",d:Date.now(),e:recent(14),s:strk(ST.h),x:[ST.xp||0,ST.lp||0]}))));draw()}
+ else if(t.id=="rs"){if(rst){ST.p={};ST.h=[];ST.xp=0;ST.lp=0;save("s1-st",ST);rst=false;code=""}else rst=true;draw()}
+ else if(t.id=="cp"){var a=$("#code");a.select();try{navigator.clipboard.writeText(a.value)}catch(x){document.execCommand("copy")}t.textContent="Copiado"}
+ else if(t.id=="add"){var n=0,bad=0,T={};$("#imp").value.split("\n").forEach(function(l){l=l.trim();if(!l)return;try{var r=JSON.parse(decodeURIComponent(escape(atob(l))));if(!r.n||!r.e)throw 0;var k=hid(r.n),o=RP[k]=RP[k]||{n:r.n,e:{}};T[k]=1;o.n=r.n;o.d=r.d;if(r.s)o.s=r.s;if(r.x)o.x=r.x;r.e.forEach(function(x){var a=x.split(":");o.e[a[1]+":"+a[3]]=[+a[0],+a[2]]});n++}catch(x){bad++}});persist(Object.keys(T));note=n+" importado(s)"+(bad?", "+bad+" inválido(s)":"");draw()}
+ else if(d.del){del(d.del);draw()}
+ else if(t.id=="new"){edit={nw:1,id:"q"+Date.now(),lv:1,tp:TP[bt]||"",s:"",a:"",u:"",st:[]};draw()}
+ else if(d.ed){edit=JSON.parse(JSON.stringify(bank.qs.filter(function(q){return q.id==d.ed})[0]));draw()}
+ else if(d.rm){bank.qs=bank.qs.filter(function(q){return q.id!=d.rm});mk();draw()}
+ else if(t.id=="ri"){edit.img="";$("#prev").innerHTML=""}
+ else if(t.id=="addsj"){var v=$("#nsj").value.trim();if(v&&!bank.subj.some(function(x){return x.n==v})){bank.subj.push({n:v,t:[]});mk();note=""}else note="Informe um nome novo.";draw()}
+ else if(t.id=="addtp"){var v2=$("#ntp").value.trim(),i2=+$("#tsj").value;if(v2&&TP.indexOf(v2)<0){bank.subj[i2].t.push(v2);TP=allT();mk();note=""}else note="Informe um nome novo, sem repetir.";draw()}
+ else if(d.rmtp){var a=d.rmtp.split(":"),tn=bank.subj[+a[0]].t[+a[1]];if(bank.qs.some(function(q){return q.tp==tn}))note="Esse tema ainda tem questões. Exclua-as antes.";else{bank.subj[+a[0]].t.splice(+a[1],1);TP=allT();ti=0;mk();note=""}draw()}
+ else if(d.rmsj){var sj=bank.subj[+d.rmsj];if(sj.t.length)note="Exclua os temas dessa matéria antes.";else if(bank.subj.length<2)note="Mantenha ao menos uma matéria.";else{bank.subj.splice(+d.rmsj,1);SI=0;ti=0;mk();note=""}draw()}
+ else if(t.id=="prs"){bank=pend.bank;pend=null;TP=allT();dirty=true;draw()}
+ else if(t.id=="pdc"){pend=null;try{localStorage.removeItem("s1-draft")}catch(x){}draw()}
+ else if(t.id=="gl"){login()}
+ else if(t.id=="csv"){exportCsv()}
+ else if(t.id=="cn"){edit=null;draw()}
+ else if(t.id=="sv"){var q={id:edit.id,tp:($("#f-tp")?$("#f-tp").value:""),lv:+$("#f-lv").value,s:$("#f-s").value.trim(),a:$("#f-a").value.trim(),u:($("#f-u")?$("#f-u").value.trim():""),st:$("#f-st").value.split("\n").map(function(x){return x.trim()}).filter(Boolean)};
+  if($("#f-ty").value=="txt"){q.ty="txt";q.k=$("#f-k").value.split("\n").map(function(x){return x.trim()}).filter(Boolean);q.mn=+$("#f-mn").value||q.k.length}
+  if(edit.img)q.img=edit.img;var hh=$("#f-h").value.trim();if(hh)q.h=hh;
+  if(!q.tp){note="Escolha uma matéria que tenha tema (crie um na aba Matérias e temas).";grab();draw();return}
+  if(!q.s||!q.a||(q.ty=="txt"&&!q.k.length)){note="Preencha enunciado, resposta e, se for dissertativa, as ideias-chave.";grab();draw();return}
+  var i=bank.qs.findIndex(function(x){return x.id==q.id});if(i<0)bank.qs.push(q);else bank.qs[i]=q;bt=TP.indexOf(q.tp);edit=null;mk();note="";draw()}
+ else if(t.id=="pub"){t.disabled=true;note="Salvando no GitHub...";bank.v=(bank.v||1)+1;ghSave().then(function(){dirty=false;note="Salvo no GitHub (versão "+bank.v+"). O site atualiza para os alunos em 1 a 3 minutos.";try{localStorage.removeItem("s1-draft")}catch(y){}draw()}).catch(function(x){bank.v--;note="Não salvou ("+(x&&x.message||"erro")+"). Confira o token e tente de novo.";draw()})}
+});
+document.addEventListener("change",function(e){var t=e.target;if(t.id=="wk"){wk=t.value;draw()}else if(t.id=="who"){who=t.value;draw()}else if(t.id=="bt"){bt=+t.value;draw()}else if(t.id=="f-sj"){grab();edit.sj=+t.value;edit.tp=bank.subj[edit.sj].t[0]||"";draw()}else if(t.id=="f-ty"){grab();edit.ty=t.value;draw()}else if(t.id=="f-img"&&t.files[0]){shrink(t.files[0],function(u){if(u){edit.img=u;$("#prev").innerHTML=prevHtml()}else $("#prev").textContent="Não consegui abrir essa imagem."})}});
+document.addEventListener("input",function(e){var t=e.target;if(t.id=="nm"){ST.n=t.value;save("s1-st",ST)}});
+document.addEventListener("keydown",function(e){if(e.key=="Enter"&&e.target.closest){var c=e.target.closest(".q");if(c&&e.target.tagName!="TEXTAREA"){var b=$(".go",c);if(b)b.click()}}});
+window.addEventListener("beforeunload",function(e){if(dirty){e.preventDefault();e.returnValue=""}});
+try{var pm=sessionStorage.getItem("s1-pub");if(pm){note="Publicado: versão "+pm+". Os alunos já veem.";tab="pr";sessionStorage.removeItem("s1-pub")}}catch(e){}
+draw();
+var GH=null;
+function repoInfo(){var m=location.hostname.match(/^(.+)\.github\.io$/);if(m){var sg=location.pathname.split("/")[1];return m[1]+"/"+(sg||m[1]+".github.io")}return load("s1-repo","")}
+function enter(tok,repo){GH={tok:tok,repo:repo};isT=true;ART=true;try{var dr=load("s1-draft",null);if(dr&&dr.b==(bank.v||1)&&JSON.stringify(dr.bank)!=JSON.stringify(bank)){pend=dr}}catch(x){}draw()}
+function ghH(){return{Authorization:"Bearer "+GH.tok,Accept:"application/vnd.github+json"}}
+async function ghSave(){var u="https://api.github.com/repos/"+GH.repo+"/contents/questoes.json",sha,r=await fetch(u,{headers:ghH()});if(r.ok){sha=(await r.json()).sha}else if(r.status!=404)throw new Error("erro "+r.status);var b=await fetch(u,{method:"PUT",headers:ghH(),body:JSON.stringify({message:"Atualiza questões (versão "+bank.v+")",content:btoa(unescape(encodeURIComponent(JSON.stringify(bank)))),sha:sha})});if(!b.ok)throw new Error("erro "+b.status)}
+async function login(){var tok=$("#gt").value.trim(),repo=$("#grp").value.trim();if(!tok||repo.indexOf("/")<1){note="Informe o repositório (usuario/nome) e o token.";draw();return}try{var r=await fetch("https://api.github.com/repos/"+repo,{headers:{Authorization:"Bearer "+tok,Accept:"application/vnd.github+json"}}),j=await r.json();if(!r.ok||!j.permissions||!j.permissions.push)throw 0;save("s1-tok",tok);save("s1-repo",repo);note="";tab="pr";enter(tok,repo)}catch(e){note="Token ou repositório inválido, ou sem permissão de escrita.";draw()}}
+function boot(b){if(b&&b.qs&&b.subj){bank=b;TP=allT()}var t=load("s1-tok",""),r=repoInfo();if(t&&r)enter(t,r);else draw()}
+fetch("questoes.json?v="+Math.floor(Date.now()/6e4),{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).catch(function(){return null}).then(boot);
+</script>
+
+
+</body></html>
