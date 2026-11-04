@@ -1,11 +1,11 @@
-// Cole aqui a configuração do seu app Firebase (Passo 3 do README).
 window.FIREBASE_CONFIG = {
-  apiKey: "COLE_AQUI",
-  authDomain: "SEU-PROJETO.firebaseapp.com",
-  projectId: "SEU-PROJETO",
-  appId: "COLE_AQUI",
-  // E-mails dos guias (professores). Use os mesmos em firestore.rules.
-  adminEmails: ["professor@exemplo.com"],
-  // Mude para true só depois de publicar a função da IA (Passo 6).
+  apiKey: "AIzaSyCNZ7SD17w2TSlyMyzgHImDNGD_6sDR0Yg",
+  authDomain: "treino-de-matematica.firebaseapp.com",
+  projectId: "treino-de-matematica",
+  storageBucket: "treino-de-matematica.firebasestorage.app",
+  messagingSenderId: "884859646183",
+  appId: "1:884859646183:web:34019ecf4bf6a7c4aab242",
+  measurementId: "G-DZT36X7RJL",
+  adminEmails: ["matheus.nogueira4@portalsesisp.org.br", "matheus.nogueira7734@gmail.com"],
   iaFunction: false
 };
