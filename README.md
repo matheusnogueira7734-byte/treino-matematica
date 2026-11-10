@@ -98,5 +98,5 @@ A filtragem acontece também na Cloud Function antes de gravar a cópia da sala;
 ### Limites desta etapa
 O banco de exercícios está isolado por sala. Chat, desafios, diretório de usuários e relatórios ainda usam coleções legadas. XP, conquistas e missões continuam calculados no navegador e podem ser adulterados. A próxima etapa deve migrar esses recursos para dados de sala e validação no servidor.
 
-## Limites conhecidos
+A descrição do sistema de XP, missões, conquistas, ranking e das próximas melhorias está em [`docs/GAMIFICACAO.md`](docs/GAMIFICACAO.md).\n\n## Limites conhecidos
 XP, missões e desafios são calculados no navegador e podem ser adulterados por quem tiver conhecimento técnico. O banco de questões embutido tem só 5 questões (o guia acrescenta no painel). O guia não apaga mensagens do chat. Testei o código com uma simulação do Firebase, não com o seu projeto real: por isso a Parte 8.
