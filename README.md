@@ -74,5 +74,29 @@ Se os 4 passos funcionarem, está pronto.
 ## IA livre (opcional, deixe para depois)
 Não é necessária para o resto funcionar. Exige plano pago por uso do Firebase e uma chave da API da Anthropic. Os arquivos estão em `functions/`; para ativar: Firebase CLI (`npm i -g firebase-tools`), `firebase login`, `firebase use treino-de-matematica`, `firebase functions:secrets:set ANTHROPIC_API_KEY`, `firebase deploy --only functions`. Depois, `iaFunction: true` no `config.js` e, no site, ligue a IA em Painel do guia > Sala > Opções e clique em Publicar alterações. Esta parte não foi testada contra o serviço real.
 
+## Salas isoladas: versão v2
+
+O banco-fonte `bank/main` é privado para o guia. Ao publicar, a Cloud Function cria uma cópia por sala em `rooms/{codigo}/bank/current`. O participante só consegue ler esse documento se tiver matrícula ativa em `rooms/{codigo}/members/{uid}`.
+
+O guia pode definir a sala de cada exercício no editor de questões:
+- **Todas as salas**: questão incluída em cada banco publicado.
+- **Uma sala específica**: questão publicada somente para aquela sala.
+
+A filtragem acontece também na Cloud Function antes de gravar a cópia da sala; não é apenas um filtro visual no navegador.
+
+### Implantação
+1. Faça backup/exportação do Firestore.
+2. Confira `functions/config.json` (e-mails dos guias e domínio escolar).
+3. Instale dependências: `cd functions && npm install`.
+4. Na raiz do projeto, publique funções e regras juntas: `firebase deploy --only functions,firestore:rules`.
+5. Entre com a conta do guia e clique em **Publicar alterações**. Isso cria/atualiza o banco por sala.
+6. Peça aos alunos para entrar novamente com o código; a callable `joinRoom` registra a matrícula.
+7. Teste com duas contas em salas diferentes: uma conta não deve conseguir ler o banco da outra sala.
+
+**Não publique apenas as regras isoladamente.** Cliente, Cloud Functions e regras precisam ser publicados como o mesmo release.
+
+### Limites desta etapa
+O banco de exercícios está isolado por sala. Chat, desafios, diretório de usuários e relatórios ainda usam coleções legadas. XP, conquistas e missões continuam calculados no navegador e podem ser adulterados. A próxima etapa deve migrar esses recursos para dados de sala e validação no servidor.
+
 ## Limites conhecidos
 XP, missões e desafios são calculados no navegador e podem ser adulterados por quem tiver conhecimento técnico. O banco de questões embutido tem só 5 questões (o guia acrescenta no painel). O guia não apaga mensagens do chat. Testei o código com uma simulação do Firebase, não com o seu projeto real: por isso a Parte 8.
