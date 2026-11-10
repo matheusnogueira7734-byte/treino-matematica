@@ -1,33 +1,68 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{db}/documents {
-    // 1) EDITE: e-mails dos guias.
-    function admin() {
-      return request.auth != null && request.auth.token.email_verified
-        && request.auth.token.email in ['matheus.nogueira4@portalsesisp.org.br', 'matheus.nogueira7734@gmail.com'];
+    function signedIn() {
+      return request.auth != null && request.auth.token.email_verified == true;
     }
-    // 2) EDITE: quem pode usar o site. Dominio da escola, ou lista em /allow/{email}.
+    function admin() {
+      return signedIn() && request.auth.token.email in [
+        'matheus.nogueira4@portalsesisp.org.br',
+        'matheus.nogueira7734@gmail.com'
+      ];
+    }
     function member() {
-      return request.auth != null && request.auth.token.email_verified && (
+      return signedIn() && (
         admin()
         || request.auth.token.email.matches('.*@portalsesisp[.]org[.]br')
         || exists(/databases/$(db)/documents/allow/$(request.auth.token.email))
       );
     }
-    match /allow/{e}   { allow read, write: if false; }
-    match /users/{u}   { allow read: if member();
-                         allow create, update: if member() && request.auth.uid == u;
-                         allow delete: if admin() || request.auth.uid == u; }
-    match /reports/{u} { allow read: if admin() || (member() && request.auth.uid == u);
-                         allow create, update: if member() && request.auth.uid == u;
-                         allow delete: if admin(); }
-    match /rooms/{c}   { allow read: if member(); allow create, update, delete: if admin(); }
-    match /bank/{d}    { allow read: if member(); allow write: if admin(); }
+    function roomMember(roomId) {
+      return member()
+        && exists(/databases/$(db)/documents/rooms/$(roomId)/members/$(request.auth.uid))
+        && get(/databases/$(db)/documents/rooms/$(roomId)/members/$(request.auth.uid)).data.status == 'active';
+    }
+
+    match /allow/{e} { allow read, write: if false; }
+    match /users/{u} {
+      allow read: if member();
+      allow create, update: if member() && request.auth.uid == u;
+      allow delete: if admin() || request.auth.uid == u;
+    }
+    match /reports/{u} {
+      allow read: if admin() || (member() && request.auth.uid == u);
+      allow create, update: if member() && request.auth.uid == u;
+      allow delete: if admin();
+    }
+    match /priv/{u} {
+      allow read, write: if member() && request.auth.uid == u;
+    }
+
+    match /rooms/{roomId} {
+      allow get: if admin() || roomMember(roomId);
+      allow list: if admin();
+      allow create, update, delete: if admin();
+      match /members/{uid} {
+        allow get: if admin() || (roomMember(roomId) && request.auth.uid == uid);
+        allow list: if admin() || roomMember(roomId);
+        allow create, update, delete: if false;
+      }
+      match /bank/{bankId} {
+        allow read: if admin() || roomMember(roomId);
+        allow write: if false;
+      }
+    }
+
+    match /bank/{d} { allow read, write: if admin(); }
     match /challenges/{d} { allow read: if member(); allow write: if admin(); }
-    match /msgs/{u}    { allow read: if member();
-                         allow create, update: if member() && request.auth.uid == u;
-                         allow delete: if admin() || request.auth.uid == u; }
-    match /data/users/{u}/{rest=**} { allow read, write: if member() && request.auth.uid == u; }
-    match /iaUse/{d}   { allow read, write: if false; }
+    match /msgs/{u} {
+      allow read: if member();
+      allow create, update: if member() && request.auth.uid == u;
+      allow delete: if admin() || request.auth.uid == u;
+    }
+    match /data/users/{u}/{rest=**} {
+      allow read, write: if member() && request.auth.uid == u;
+    }
+    match /iaUse/{d} { allow read, write: if false; }
   }
 }
