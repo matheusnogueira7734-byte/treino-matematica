@@ -80,5 +80,28 @@ A arquitetura-alvo, matriz de permissões, plano de migração e critérios de a
 
 **Atenção:** esses documentos são uma especificação de migração, não uma confirmação de que o isolamento v2 já está ativo. A versão atual ainda usa coleções globais e pontuação no cliente. Não publique regras v2 sem atualizar o cliente e as Cloud Functions em conjunto.
 
+## Salas isoladas: atualização v2
+
+A versão v2 separa o **banco publicado para participantes** por sala:
+- `bank/main` é o banco-fonte do guia e fica acessível somente aos guias.
+- Uma Cloud Function publica uma cópia em `rooms/{codigo}/bank/current`.
+- O participante só lê esse banco se tiver matrícula ativa em `rooms/{codigo}/members/{uid}`.
+- A matrícula é criada pela função `joinRoom`, após validar conta e código.
+- Alunos logados sem matrícula não visualizam a área de exercícios.
+
+### Implantação
+1. Faça backup/exportação do Firestore.
+2. Confira `functions/config.json` (e-mails dos guias e domínio escolar).
+3. Instale as dependências: `cd functions && npm install`.
+4. Na raiz, publique funções e regras juntas: `firebase deploy --only functions,firestore:rules`.
+5. Entre com a conta do guia e publique novamente o banco para cada sala existente.
+6. Peça aos alunos para entrar novamente com o código; isso cria/renova a matrícula.
+7. Teste com duas contas em salas diferentes. A conta A deve ler apenas `rooms/A/bank/current`; ler `rooms/B/bank/current` deve retornar `permission-denied`.
+
+**Não publique apenas as regras isoladamente.** O cliente depende das funções `joinRoom` e `publishRoomBank`. Publique cliente, funções e regras como o mesmo release.
+
+### Limites desta etapa
+Esta entrega isola o banco de exercícios por sala. Mensagens, desafios, diretório de usuários e relatórios ainda usam coleções legadas. XP e conquistas continuam calculados no cliente e ainda podem ser adulterados. A etapa seguinte deve migrar esses recursos para caminhos por sala e validação no servidor.
+
 ## Limites conhecidos
 XP, missões e desafios são calculados no navegador e podem ser adulterados por quem tiver conhecimento técnico. O banco de questões embutido tem só 5 questões (o guia acrescenta no painel). O guia não apaga mensagens do chat. Testei o código com uma simulação do Firebase, não com o seu projeto real: por isso a Parte 8.
