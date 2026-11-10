@@ -1,6 +1,6 @@
 # Arquitetura Firestore v2 — salas isoladas
 
-> **Status: proposta técnica / não implantada.** Este documento descreve a migração necessária. Não publique regras v2 isoladamente: a interface atual ainda usa as coleções legadas e isso interromperia o funcionamento.
+> **Status: etapa 1 implementada em branch/PR; ainda não implantada no Firebase.** O cliente e as Cloud Functions já usam `rooms/{roomId}/bank/current` para isolar o banco de exercícios e `members/{uid}` para validar matrícula. Mensagens, desafios, roster, relatórios e pontuação continuam no modelo legado.
 
 ## Objetivos
 
@@ -120,3 +120,20 @@ A futura versão de `firestore.rules` deve aplicar, no mínimo:
 ## Situação da implementação atual
 
 A versão atual usa `bank/main` global, coleções globais `challenges` e `msgs`, snapshots amplos de `users` e pontuação calculada no navegador. Portanto, **não é seguro apenas endurecer as regras atuais**: isso quebraria telas existentes. A migração precisa atualizar cliente, funções e regras como uma única entrega coordenada.
+
+
+## Implementação entregue na etapa 1
+
+- Callable `joinRoom`: valida a conta e o código; cria a matrícula ativa em `rooms/{roomId}/members/{uid}`.
+- Callable `publishRoomBank`: só o dono da sala copia o banco-fonte para `rooms/{roomId}/bank/current`.
+- O cliente do guia publica o banco para as salas existentes e para salas recém-criadas.
+- O cliente do aluno renova a matrícula local e assina somente o banco da sala atual.
+- As regras negam leitura de `bank/main` para participantes e permitem leitura do banco por membros ativos.
+- Participantes logados sem matrícula ficam bloqueados na aba de exercícios.
+
+### Limitações ainda abertas
+
+- O banco publicado é uma cópia do banco-fonte completo para cada sala; ainda não há atribuição de subconjuntos de questões.
+- Desafios e chat ainda usam coleções globais legadas.
+- A lista global de usuários e relatórios ainda precisa ser substituída por projeções por sala.
+- XP, conquistas e missões ainda dependem do estado do navegador; não são resistentes a adulteração.
