@@ -74,5 +74,11 @@ Se os 4 passos funcionarem, está pronto.
 ## IA livre (opcional, deixe para depois)
 Não é necessária para o resto funcionar. Exige plano pago por uso do Firebase e uma chave da API da Anthropic. Os arquivos estão em `functions/`; para ativar: Firebase CLI (`npm i -g firebase-tools`), `firebase login`, `firebase use treino-de-matematica`, `firebase functions:secrets:set ANTHROPIC_API_KEY`, `firebase deploy --only functions`. Depois, `iaFunction: true` no `config.js` e, no site, ligue a IA em Painel do guia > Sala > Opções e clique em Publicar alterações. Esta parte não foi testada contra o serviço real.
 
+## Próxima evolução: salas isoladas e Liga de Matemática
+
+A arquitetura-alvo, matriz de permissões, plano de migração e critérios de aceite estão em [`docs/ARQUITETURA_FIRESTORE_V2.md`](docs/ARQUITETURA_FIRESTORE_V2.md). A especificação de XP, missões, conquistas, ranking e temporadas está em [`docs/GAMIFICACAO.md`](docs/GAMIFICACAO.md).
+
+**Atenção:** esses documentos são uma especificação de migração, não uma confirmação de que o isolamento v2 já está ativo. A versão atual ainda usa coleções globais e pontuação no cliente. Não publique regras v2 sem atualizar o cliente e as Cloud Functions em conjunto.
+
 ## Limites conhecidos
 XP, missões e desafios são calculados no navegador e podem ser adulterados por quem tiver conhecimento técnico. O banco de questões embutido tem só 5 questões (o guia acrescenta no painel). O guia não apaga mensagens do chat. Testei o código com uma simulação do Firebase, não com o seu projeto real: por isso a Parte 8.
